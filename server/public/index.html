@@ -17,24 +17,32 @@
         id="jeremyInput"
         placeholder="Jeremy"
         type="number"
+        required
         />
         <input 
         id="chrisInput"
         placeholder="Chris"
         type="number"
+        required
         />
         <input 
         id="toivoInput"
         placeholder="Toivo"
         type="number"
+        required
         />
       <input type="submit" id="guessButton"/>
     </form>
-    <div id="guessHistory">
-      Guess History:
-      <ul id="guessList">
-        <!-- guess history goes here -->
-      </ul>
-    </div>
+    <table>
+      <thead>
+        <th>Name</th>
+        <th>Historical Guesses</th>
+        <th>High or Low?</th>
+        <th>Total Guesses</th>
+      </thead>
+      <tbody id="tableBody">
+        <!-- table data goes here -->
+      </tbody>
+    </table>
 </body>
 </html>

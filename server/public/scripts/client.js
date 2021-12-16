@@ -44,13 +44,16 @@ function refresh() {
 
 // declare render function
 function render(state) {
-    $('#guessList').empty();
+    $('#tableBody').empty();
   // render/append retrieved server side guesses array
     for (let object of state)  {
-  $('#guessList').append(`
-      <li>
-        ${object.name}: ${object.guess}
-      </li>
+  $('#tableBody').append(`
+      <tr>
+        <td>${object.name}</td> 
+        <td>${object.guess}</td>
+        <td>${object.highLow}</td>
+        <td>${object.isTrue}</td>
+      </tr>
   `)
     }
 }
