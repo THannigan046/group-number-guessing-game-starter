@@ -4,6 +4,23 @@ function onReady() {
   console.log("jquery is loaded!")
   $('#gameForm').on('submit', addGuess);
 
+  $(document).on('click', '#restart', restartGame)
+}
+
+function restartGame(){
+  $.ajax({
+    method: 'POST',
+    url: '/reset',
+    data: {
+      reset: true
+    }
+  })
+    .then((response) => {
+      console.log('POST response', response);
+      refresh();
+
+    });
+  
 }
 
 function addGuess(event) {

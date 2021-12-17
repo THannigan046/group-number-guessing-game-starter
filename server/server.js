@@ -38,6 +38,29 @@ app.get('/guesses', (req, res) => {
   res.send(guesses);
 });
 
+
+app.post('/reset', (req, res) => {
+  console.log('in POST /guesses', req.body);
+  res.sendStatus(201);
+  if (req.body.reset === true){
+    console.log('in reset');
+    
+    guesses = [
+      {
+        name: 'Jeremy',
+        guess: []
+      },
+      {
+        name: 'Chris',
+        guess: []
+      },
+      {
+        name: 'Toivo',
+        guess: []
+      }
+    ];
+  }
+})
   // POST /guesses endpoint
 app.post('/guesses', (req, res) => {
   console.log('in POST /guesses', req.body);
