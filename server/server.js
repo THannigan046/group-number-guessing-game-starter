@@ -43,19 +43,20 @@ app.post('/guesses', (req, res) => {
   console.log('in POST /guesses', req.body);
 
   // Add the guess to our array
-  guesses[0].guess.push(req.body.guessArray[0]);
-  guesses[1].guess.push(req.body.guessArray[1]);
-  guesses[2].guess.push(req.body.guessArray[2]);
+  guesses[0].guess.push (Number(req.body.guessArray[0]));
+  guesses[1].guess.push (Number(req.body.guessArray[1]));
+  guesses[2].guess.push(Number(req.body.guessArray[2]));
 
 
   // Send back a 👍
   res.sendStatus(201);
 
   for (zorp of guesses){
-    if (zorp.guess === randomNum){
+    console.log(zorp.guess[zorp.guess.length - 1]);
+    if (zorp.guess[zorp.guess.length - 1]  === randomNum){
       zorp.isTrue = true;
       zorp.highLow = 'equal';
-    }
+    } 
     else{
       zorp.isTrue = false;
       if (zorp.guess > randomNum) {

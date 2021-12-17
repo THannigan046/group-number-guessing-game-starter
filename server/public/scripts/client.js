@@ -45,6 +45,7 @@ function refresh() {
 // declare render function
 function render(state) {
     $('#tableBody').empty();
+    $('#winnerDiv').empty();
   // render/append retrieved server side guesses array
     for (let object of state)  {
   $('#tableBody').append(`
@@ -52,9 +53,16 @@ function render(state) {
         <td>${object.name}</td> 
         <td>${object.guess}</td>
         <td>${object.highLow}</td>
-        <td>${object.isTrue}</td>
+        <td>${object.guess.length}</td>
       </tr>
   `)
+  if (object.isTrue === true) {
+    
+    $('#winnerDiv').append(`
+    <h1>${object.name} Wins! Yayyy!</h1>
+    <button id="restart">Restart</button>
+    `)
+  }
     }
 }
 
