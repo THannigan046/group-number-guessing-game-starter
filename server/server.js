@@ -42,8 +42,9 @@ app.get('/guesses', (req, res) => {
 app.post('/reset', (req, res) => {
   console.log('in POST /guesses', req.body);
   res.sendStatus(201);
-  if (req.body.reset === true){
     console.log('in reset');
+    randomNum = randomNumber(0, 25)
+  console.log('number is:', randomNum);
     
     guesses = [
       {
@@ -59,7 +60,7 @@ app.post('/reset', (req, res) => {
         guess: []
       }
     ];
-  }
+  
 })
   // POST /guesses endpoint
 app.post('/guesses', (req, res) => {

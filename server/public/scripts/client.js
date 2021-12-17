@@ -31,7 +31,9 @@ function addGuess(event) {
   let chrisGuess = $('#chrisInput').val();
   let toivoGuess = $('#toivoInput').val();
   let newGuesses = { guessArray: [ jeremyGuess, chrisGuess, toivoGuess ] };
-
+  $('#jeremyInput').val('');
+  $('#chrisInput').val('');
+  $('#toivoInput').val('');
   $.ajax({
       method: 'POST',
       url: '/guesses',
