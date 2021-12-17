@@ -7,45 +7,49 @@
   <title>Guess A Number!</title>
   <script src="vendors/jquery.min.js"></script>
   <script src="scripts/client.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <header>
+  <header class="formControl">
     <h1>Number Guessing Game</h1>
     <div id="winnerDiv">
       
     </div>
   </header>
-    <form id="gameForm">
+    <form id="gameForm" class="formControl">
       <input 
         id="jeremyInput"
         placeholder="Jeremy"
         type="number"
         required
+        class="formControl"
         />
         <input 
         id="chrisInput"
         placeholder="Chris"
         type="number"
         required
+        class="formControl"
         />
         <input 
         id="toivoInput"
         placeholder="Toivo"
         type="number"
         required
+        class="formControl"
         />
-      <input type="submit" id="guessButton"/>
+      <input class="formControl" type="submit" id="guessButton"/>
     </form>
-    <table>
-      <thead>
+    <table class="table">
+      <thead class="formControl">
         <th>Name</th>
         <th>Historical Guesses</th>
         <th>High or Low?</th>
         <th>Total Guesses</th>
       </thead>
-      <tbody id="tableBody">
+      <tbody class="tableBody">
         <!-- table data goes here -->
       </tbody>
     </table>
